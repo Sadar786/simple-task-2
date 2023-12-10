@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 2 Error Free</title>
+    <link rel="stylesheet" href="Style.css" >
+  </head>
+  <body>
+    <nav>
+      <div class="menu-container nav-wrapper ">
+        <div class="brand">
+          <a class="active" href="index.html">
+            <img class="logo" src="education.jpg" alt="insurance-logo" border="0" />
+          </a>
+        </div>
+        <div class="hamberger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <ul class="nav-list">
+          <li>
+            <a href="#">Services</a>
+            <ul class="dropdown-list">
+              <li><a href="">Service 1</a></li>
+              <li><a href="">Service 1</a></li>
+              <li><a href="">Service 1</a></li>
+              <li><a href="">Service 1</a></li>
+              <li><a href="">Service 1</a></li>
+              <li><a href="">Service 1</a></li>
+              
+            </ul>
+          </li>
+          <li>
+            <a href="">Careers</a>
+          </li>
+          <li><a href="products.html">News</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contacts</a></li>
+          <li>
+            <button class="btn btn-blue">
+              Get Started
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
+    <div class="hero">
+     </div>
+    <script>
+        window.addEventListener("resize", function () {
+      addRequiredClasses();
+    });
+
+      window.addEventListener("load", function () {
+        addRequiredClasses();
+      });
+
+      function addRequiredClasses() {
+  if (window.innerWidth < 860) {
+    document.body.classList.add("mobile");
+  } else {
+    document.body.classList.remove("mobile");
+  }
+}
+
+
+      let hamberger = document.querySelector(".hamberger");
+       let mobileNav = document.querySelector(".nav-list");
+       let mobileclass = document.querySelector(".mobile")
+
+      let bars = document.querySelectorAll(".hamberger span");
+
+      let isActive = false;
+
+      hamberger.addEventListener("click", function () {
+        mobileNav.classList.add("open");
+
+        if (!isActive) {
+          bars[0].style.transform = "rotate(45deg)";
+          bars[1].style.opacity = "0";
+          bars[2].style.transform = "rotate(-45deg)";
+          mobileNav.style.opacity="1";
+           isActive = true;
+        } else {
+          bars[0].style.transform = "rotate(0deg)";
+          bars[1].style.opacity = "1";
+          bars[2].style.transform = "rotate(0deg)";
+          mobileNav.style.opacity="0";
+          isActive = false;
+        }
+      });
+    </script>
+  </body>
+</html>

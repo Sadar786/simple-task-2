@@ -1,0 +1,283 @@
+    /* Define variables */
+    :root {
+      --third-color: #444; /* Adjusted text color */
+      --blue-color: #5aa7e6; /* Adjusted blue accent color */
+      --fourth-color: #ff9900; /* Additional accent color */
+      /* Define other variables as needed */
+    }
+    body {
+      font-family: 'Roboto', sans-serif; /* Replace with your preferred sans-serif font */
+    }
+    
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif; /* Replace with your preferred serif font */
+    }
+    /* Menu styling */
+    .menu-container {
+      width: 1152px;
+      max-width: 100%;
+      margin: 0 auto;
+     }
+    
+      .logo{
+        width: 64px;
+      }
+      .nav-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    
+      
+      .nav-wrapper ul.nav-list {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+          background-color: white; /* Card Background */
+
+      }
+      
+      .nav-wrapper ul.nav-list li {
+        margin-left: 30px;
+        padding: 20px 0;
+        position: relative;
+        color: #333; /* Text Color */
+
+      }
+      .btn-blue {
+        display: inline-block;
+        padding: 8px 20px;
+        font-weight: bold;
+        font-size: 17px;
+        text-align: center;
+        text-decoration: none;
+        border: 2px solid #0000FF; /* Blue border color */
+        color: #0e7094; /* Blue text color */
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        background-color: transparent;
+      }
+      
+      .btn-blue:hover {
+        background-color: #8cbdee; /* Blue background color on hover */
+        color: white; /* Text color on hover */
+        
+      }
+      
+      .nav-wrapper ul.nav-list li a {
+        color: var(--third-color);
+        text-decoration: none;
+        letter-spacing: 1.2px;
+        transition: all 0.3s ease-in-out;
+        padding: 8px 8px;
+        font-weight: bold;
+        border-radius: 8px;
+        font-size: 16px;
+      }
+     
+      .nav-wrapper ul.nav-list li a:hover, .nav-wrapper ul.nav-list li.active a {
+        color: var(--blue-color);
+       }
+      .nav-wrapper ul.nav-list li a:hover {
+        border-bottom: 3px solid black;
+    
+        color:black; /* Text Color on Hover */
+ 
+      }
+      .hero{
+        display: flex;
+        background-color: #78c9e6;
+        width: 100%;
+        height: 470px;
+      }
+      nav ul.dropdown-list {
+        list-style-type: none;
+        display: block;
+        background: whitesmoke;
+        padding: 8px 22px;
+        position: absolute;
+        width: max-content;
+         transform: translateX(-30%);
+        opacity: 0;
+         margin-top: 10px;
+        pointer-events: none;
+      }
+      
+      .nav-wrapper ul.dropdown-list li {
+        margin-left: 0;
+        padding: 8px 10px;
+      }
+      
+      .nav-wrapper ul.dropdown-list li a {
+        color: var(--third-color);
+      }
+      
+      .nav-wrapper ul.nav-list li:hover .dropdown-list {
+        opacity: 1;
+        pointer-events: auto;
+        animation: moveUp 0.5s ease-in-out forwards;
+      }
+      
+      .nav-wrapper .nav-list li .btn a {
+        color: var(--fourth-color);
+      }
+      
+      .nav-wrapper .nav-list li .btn:hover a {
+        color: var(--third-color);
+      }
+      
+      
+      /* Responsive menu */
+      .hamberger {
+        display: none;
+      }
+      
+      
+      .mobile .hamberger {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 0;
+        cursor: pointer;
+      }
+      
+      .mobile .hamberger span {
+        background: var(--third-color);
+        width: 28px;
+        height: 2px;
+        margin-bottom: 8px;
+      }
+      
+      .mobile ul.nav-list {
+        background: -webkit-linear-gradient(45deg, #f5f6fa, #dcdde1);
+        background: linear-gradient(45deg, #f5f6fa, #dcdde1);
+        position: fixed;
+        left: 0;
+        top: 0;
+        margin-bottom: 10;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-top: 80px;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s ease-in-out;
+      }
+     
+      
+      .mobile .nav-wrapper ul li {
+        text-align: center;
+      }
+      .dropdown-list {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /* Adjust shadow color and intensity */
+        border-radius: 15px;
+        /* Other existing styles for .dropdown-list */
+      }
+      
+       
+      .mobile ul.dropdown-list {
+        position: relative;
+        background: transparent;
+        text-align: center;
+        height: 0;
+        overflow-y: hidden;
+        transition: height 0.5s ease-in-out; /* Added transition for height */
+        padding-top: 0;
+        
+      }
+      
+      .mobile .nav-wrapper ul li:hover .dropdown-list {
+        height: max-content;
+        padding-top: 6px;
+        transition: height 0.5s ease-in-out; /* Added transition for height */
+      }
+      
+      
+      .mobile .nav-wrapper ul.dropdown-list li a {
+        color: #7f8fa6;
+      }
+      
+      .mobile .nav-wrapper ul.dropdown-list li a:hover {
+        color: var(--third-color);
+      }
+
+    /* Add this CSS to your existing styles */
+
+/* Adjustments for mobile responsiveness */
+@media screen and (max-width: 768px) {
+  /* Menu container and logo adjustments */
+  .menu-container {
+    width: 80%;
+    padding: 0 5%; /* Adjusted padding for better spacing */
+  }
+
+  .logo {
+    width: 40px; /* Reduced logo size for smaller screens */
+  }
+
+  /* Main navigation adjustments */
+  .nav-wrapper ul.nav-list {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 60px;
+       align-items: center;
+  }
+
+  .nav-wrapper ul.nav-list li {
+    margin-left: 0;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  /* Dropdown adjustments */
+  .nav-wrapper ul.dropdown-list {
+    max-width:100%; /* Expanded dropdown width */
+     padding: 5px 0;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+    position: static;
+    transition: none; /* Removed transition for immediate display */
+
+  }
+   
+  .dropdown-list {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adjust shadow color and intensity */
+    border-radius: 15px;
+    /* Other existing styles for .dropdown-list */
+  }
+  .hero{
+     background-color: white;
+  }
+
+  /* Dropdown list item adjustments */
+  .mobile .nav-wrapper ul.dropdown-list li a {
+    color: var(--third-color);
+    padding: 28px 0; /* Adjusted padding for touch usability */
+    
+ 
+  }
+
+  /* Hamburger menu adjustments */
+  .mobile .hamberger {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    cursor: pointer;
+  }
+   
+  .mobile .hamberger span {
+    width: 20px; /* Adjusted size for better spacing */
+    margin-bottom: 6px;
+  }
+
+  /* Mobile navigation adjustments */
+  .mobile ul.nav-list {
+    padding-top: 60px; /* Adjusted padding for better spacing */
+    margin-left: -30px;
+  }
+  .dropdown-list{
+    margin-top: -10px;
+  }
+}
